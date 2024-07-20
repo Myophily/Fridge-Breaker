@@ -84,11 +84,11 @@ with col5:
         with st.spinner('레시피 생성 중...'):
             gemini_recipe = get_gemini_response(prompt)
 
-        st.subheader('Gemini API를 통한 추천 레시피:')
+        st.subheader('Gemini를 통한 추천 레시피:')
         st.markdown(gemini_recipe)
 
 with col6:
     st.markdown('Powered By GEMINI')
 
 st.markdown("---")
-st.markdown("Fridge Breaker (냉장고 털어먹기) - 스마트 레시피 생성기")
+st.markdown("Made by Myophily")
