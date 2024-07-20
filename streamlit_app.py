@@ -8,7 +8,7 @@ gemini_api_key = st.secrets["GEMINI_API_KEY"]
 genai.configure(api_key=gemini_api_key)
 
 def get_gemini_response(prompt, images=[]):
-    model = genai.GenerativeModel('gemini-pro-vision' if images else 'gemini-pro')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     try:
         if images:
             image_parts = [{"mime_type": "image/jpeg", "data": img_byte_arr} for img_byte_arr in images]
