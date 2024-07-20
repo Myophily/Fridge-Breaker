@@ -37,6 +37,18 @@ def process_uploaded_images(uploaded_files, prompt):
 # Streamlit 앱의 UI 구성
 st.title('Fridge Breaker (냉장고 털어먹기)')
 
+st.components.v1.html("""
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNDLCSB29K"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DNDLCSB29K');
+    </script>
+""", height=0)
+
+
 # 재료 입력
 col1, col2 = st.columns(2)
 with col1:
