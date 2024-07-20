@@ -9,12 +9,31 @@ genai.configure(api_key=gemini_api_key)
 
 def get_gemini_response(prompt, images=[]):
     model = genai.GenerativeModel('gemini-pro-vision' if images else 'gemini-pro')
-    response = model.generate_content([prompt] + [{"mime_type": "image/jpeg", "data": img.getvalue()} for img in images] if images else prompt)
-    return response.text
+    try:
+        if images:
+            image_parts = [{"mime_type": "image/jpeg", "data": img_byte_arr} for img_byte_arr in images]
+            response = model.generate_content([prompt] + image_parts)
+        else:
+            response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        st.error(f"An error occurred while generating the response: {str(e)}")
+        return ""
 
 def process_uploaded_images(uploaded_files, prompt):
-    return get_gemini_response(prompt, uploaded_files) if uploaded_files else ""
-
+    if not uploaded_files:
+        return ""
+    
+    try:
+        image_byte_arrays = []
+        for uploaded_file in uploaded_files:
+            bytes_data = uploaded_file.getvalue()
+            image_byte_arrays.append(bytes_data)
+        
+        return get_gemini_response(prompt, image_byte_arrays)
+    except Exception as e:
+        st.error(f"An error occurred while processing the images: {str(e)}")
+        return ""
 # Streamlit 앱의 UI 구성
 st.title('Fridge Breaker (냉장고 털어먹기)')
 
