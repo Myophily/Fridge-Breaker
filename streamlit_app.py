@@ -47,10 +47,6 @@ components.html(
         gtag('js', new Date());
         gtag('config', 'G-DNDLCSB29K');
     </script>
-    
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1407399176569713"
-     crossorigin="anonymous"></script>
     """,
     height=0,
 )
