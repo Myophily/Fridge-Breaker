@@ -7,11 +7,13 @@ gemini_api_key = st.secrets["GEMINI_API_KEY"]
 # Gemini 모델 설정
 genai.configure(api_key=gemini_api_key)
 
+
 def get_gemini_response(prompt, images=[]):
     model = genai.GenerativeModel('gemini-1.5-flash')
     try:
         if images:
-            image_parts = [{"mime_type": "image/jpeg", "data": img_byte_arr} for img_byte_arr in images]
+            image_parts = [{"mime_type": "image/jpeg",
+                            "data": img_byte_arr} for img_byte_arr in images]
             response = model.generate_content([prompt] + image_parts)
         else:
             response = model.generate_content(prompt)
@@ -20,21 +22,31 @@ def get_gemini_response(prompt, images=[]):
         st.error(f"An error occurred while generating the response: {str(e)}")
         return ""
 
+
 def process_uploaded_images(uploaded_files, prompt):
     if not uploaded_files:
         return ""
-    
+
     try:
         image_byte_arrays = []
         for uploaded_file in uploaded_files:
             bytes_data = uploaded_file.getvalue()
             image_byte_arrays.append(bytes_data)
-        
+
         return get_gemini_response(prompt, image_byte_arrays)
     except Exception as e:
         st.error(f"An error occurred while processing the images: {str(e)}")
         return ""
-    
+
+
+# 상단 배너 광고
+st.markdown("""
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit = "DAN-frWlbe0fkSdWeNHP"
+    data-ad-width = "320"
+    data-ad-height = "50"></ins>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    """, unsafe_allow_html=True)
 
 # Streamlit 앱의 UI 구성
 st.title('Fridge Breaker (냉장고 털어먹기)')
@@ -44,17 +56,19 @@ col1, col2 = st.columns(2)
 with col1:
     ingredients_text = st.text_area('재료를 입력하세요 (줄바꿈으로 구분):', height=100)
 with col2:
-    ingredients_images = st.file_uploader("재료 이미지를 업로드하세요:", type=["jpg", "png", "jpeg"], accept_multiple_files=True)
+    ingredients_images = st.file_uploader(
+        "재료 이미지를 업로드하세요:", type=["jpg", "png", "jpeg"], accept_multiple_files=True)
 
 # 조미료 입력
-seasonings = st.text_input('조미료를 입력하세요 (쉼표로 구분):')
+seasonings = st.text_area('조미료를 입력하세요 (줄바꿈으로 구분):', height=100)
 
 # 조리도구 입력
 col3, col4 = st.columns(2)
 with col3:
     tools_text = st.text_area('조리도구를 입력하세요 (줄바꿈으로 구분):', height=100)
 with col4:
-    tools_images = st.file_uploader("조리도구 이미지를 업로드하세요:", type=["jpg", "png", "jpeg"], accept_multiple_files=True)
+    tools_images = st.file_uploader("조리도구 이미지를 업로드하세요:", type=[
+                                    "jpg", "png", "jpeg"], accept_multiple_files=True)
 
 # 요리 난이도 선택
 difficulty = st.slider('요리 난이도를 선택하세요:', 1, 5, 3)
@@ -74,10 +88,13 @@ health = st.checkbox('건강을 고려한 음식')
 col5, col6 = st.columns([3, 1])
 with col5:
     if st.button('레시피 받기'):
-        ingredients_from_images = process_uploaded_images(ingredients_images, "이 이미지에서 보이는 식재료들을 쉼표로 구분하여 나열해주세요.") if 'ingredients_images' in locals() else ""
-        tools_from_images = process_uploaded_images(tools_images, "이 이미지에서 보이는 조리도구들을 쉼표로 구분하여 나열해주세요.") if 'tools_images' in locals() else ""
+        ingredients_from_images = process_uploaded_images(
+            ingredients_images, "이 이미지에서 보이는 식재료들을 쉼표로 구분하여 나열해주세요.") if 'ingredients_images' in locals() else ""
+        tools_from_images = process_uploaded_images(
+            tools_images, "이 이미지에서 보이는 조리도구들을 쉼표로 구분하여 나열해주세요.") if 'tools_images' in locals() else ""
 
-        all_ingredients = f"{ingredients_text}, {ingredients_from_images}".strip(', ')
+        all_ingredients = f"{ingredients_text}, {ingredients_from_images}".strip(
+            ', ')
         all_tools = f"{tools_text}, {tools_from_images}".strip(', ')
 
         prompt = f"""
@@ -111,5 +128,65 @@ with col5:
 with col6:
     st.markdown('Powered By GEMINI')
 
+# 중간 배너 광고
+st.markdown("""
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit = "DAN-El8N7ApHiussJXqR"
+    data-ad-width = "250"
+    data-ad-height = "250"></ins>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    """, unsafe_allow_html=True)
+
 st.markdown("---")
 st.markdown("Made by Myophily")
+
+# 하단 배너 광고
+st.markdown("""
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit = "DAN-X5QpGPG2Xqn7u8NO"
+    data-ad-width = "320"
+    data-ad-height = "100"></ins>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    """, unsafe_allow_html=True)
+
+# PC용 측면 배너 (좌)
+st.markdown("""
+    <style>
+    @media (min-width: 1200px) {
+        .sidebar-left {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    </style>
+    <div class="sidebar-left">
+        <ins class="kakao_ad_area" style="display:none;"
+        data-ad-unit = "DAN-lxRqIeQRs8DawKcQ"
+        data-ad-width = "160"
+        data-ad-height = "600"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    """, unsafe_allow_html=True)
+
+# PC용 측면 배너 (우)
+st.markdown("""
+    <style>
+    @media (min-width: 1200px) {
+        .sidebar-right {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    </style>
+    <div class="sidebar-right">
+        <ins class="kakao_ad_area" style="display:none;"
+        data-ad-unit = "DAN-2qnG3am7KKrqbA7S"
+        data-ad-width = "160"
+        data-ad-height = "600"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    """, unsafe_allow_html=True)
