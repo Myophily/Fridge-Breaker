@@ -61,7 +61,7 @@ placeholder_text = """Ex)
 소금
 설탕
 ..."""
-seasonings = st.text_area('조미료를 입력하세요 (줄바꿈으로 구분):', height=100)
+seasonings = st.text_area('조미료를 입력하세요 (줄바꿈으로 구분):', placeholder=placeholder_text, height=100)
 
 # 조리도구 입력
 col3, col4 = st.columns(2)
