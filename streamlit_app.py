@@ -39,6 +39,65 @@ def process_uploaded_images(uploaded_files, prompt):
         return ""
 
 
+st.html("""
+    <style>
+    .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .ad-banner-top, .ad-banner-bottom {
+        width: 100%;
+        height: 50px;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .ad-banner-middle {
+        width: 100%;
+        height: 250px;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+    @media (min-width: 1200px) {
+        .ad-sidebar-left, .ad-sidebar-right {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 160px;
+            height: 600px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ad-sidebar-left {
+            left: 20px;
+        }
+        .ad-sidebar-right {
+            right: 20px;
+        }
+    }
+    </style>
+    """)
+
+# 상단 배너 광고
+st.html("""
+    <div class="ad-banner-top">
+        <ins class="kakao_ad_area" style="display:none;"
+        data-ad-unit = "DAN-aR53C2DiBaHbGfZH"
+        data-ad-width = "320"
+        data-ad-height = "50"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    """)
+
+
 # Streamlit 앱의 UI 구성
 st.title('Fridge Breaker (냉장고 털어먹기)')
 
@@ -119,5 +178,51 @@ with col5:
 with col6:
     st.markdown('Powered By GEMINI')
 
+# 중간 배너 광고
+st.html("""
+        <div class="ad-banner-middle">
+            <ins class="kakao_ad_area" style="display:none;"
+            data-ad-unit = "DAN-06p9ndXwToOadp2Y"
+            data-ad-width = "250"
+            data-ad-height = "250"></ins>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
+        """)
+
+
 st.markdown("---")
 st.markdown("Made by Myophily")
+
+
+# 하단 배너 광고
+st.html("""
+        <div class="ad-banner-bottom">
+            <ins class="kakao_ad_area" style="display:none;"
+            data-ad-unit = "DAN-YIhWnFVJhq24imgI"
+            data-ad-width = "320"   
+            data-ad-height = "100"></ins>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
+        """)
+
+# PC용 측면 배너 (좌)
+st.html("""
+        <div class="ad-sidebar-left">
+            <ins class="kakao_ad_area" style="display:none;"
+            data-ad-unit = "DAN-DkJZFlikpq3bZH7J"
+            data-ad-width = "160"
+            data-ad-height = "600"></ins>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
+        """)
+
+# PC용 측면 배너 (우)
+st.html("""
+        <div class="ad-sidebar-right">
+            <ins class="kakao_ad_area" style="display:none;"
+            data-ad-unit = "DAN-zgGJrY08CWiRQd2C"
+            data-ad-width = "160"
+            data-ad-height = "600"></ins>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
+        """)
