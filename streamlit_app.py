@@ -41,6 +41,8 @@ def process_uploaded_images(uploaded_files, prompt):
 
 # Streamlit 앱의 UI 구성
 st.title('Fridge Breaker (냉장고 털어먹기)')
+st.write('냉장고 속 재료로 만들 수 있는 요리를 추천받고 레시피를 확인하세요.')
+st.write('집에 있는 재료와 조리도구를 입력하거나 사진을 업로드하세요.')
 
 # 재료 입력
 col1, col2 = st.columns(2)
