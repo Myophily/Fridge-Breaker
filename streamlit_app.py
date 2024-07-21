@@ -47,11 +47,9 @@ st.write('집에 있는 재료와 조리도구를 입력하거나 사진을 업�
 # 재료 입력
 col1, col2 = st.columns(2)
 with col1:
-    placeholder_text = """
-    감자
+    placeholder_text = """감자
     파
-    ...
-    """
+    ..."""
     ingredients_text = st.text_area('재료를 입력하세요 (줄바꿈으로 구분):', placeholder=placeholder_text, height=100)
 with col2:
     ingredients_images = st.file_uploader(
@@ -63,11 +61,9 @@ seasonings = st.text_area('조미료를 입력하세요 (줄바꿈으로 구분)
 # 조리도구 입력
 col3, col4 = st.columns(2)
 with col3:
-    placeholder_text = """
-    후라이팬
+    placeholder_text = """후라이팬
     냄비
-    ...
-    """
+    ..."""
     tools_text = st.text_area('조리도구를 입력하세요 (줄바꿈으로 구분):', placeholder=placeholder_text, height=100)
 with col4:
     tools_images = st.file_uploader("조리도구 이미지를 업로드하세요:", type=[
