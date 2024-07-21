@@ -39,44 +39,6 @@ def process_uploaded_images(uploaded_files, prompt):
         return ""
 
 
-st.html("""
-    <style>
-    .main-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-    .ad-banner-top, .ad-banner-bottom {
-        width: 100%;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-    .ad-banner-middle {
-        width: 100%;
-        height: 250px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 20px 0;
-    }
-    </style>
-    """)
-
-# 상단 배너 광고
-st.html("""
-    <div class="ad-banner-top">
-        <ins class="kakao_ad_area" style="display:none;"
-        data-ad-unit = "DAN-aR53C2DiBaHbGfZH"
-        data-ad-width = "320"
-        data-ad-height = "50"></ins>
-        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    </div>
-    """)
-
-
 # Streamlit 앱의 UI 구성
 st.title('Fridge Breaker (냉장고 털어먹기)')
 
@@ -157,29 +119,6 @@ with col5:
 with col6:
     st.markdown('Powered By GEMINI')
 
-# 중간 배너 광고
-st.html("""
-        <div class="ad-banner-middle">
-            <ins class="kakao_ad_area" style="display:none;"
-            data-ad-unit = "DAN-06p9ndXwToOadp2Y"
-            data-ad-width = "250"
-            data-ad-height = "250"></ins>
-            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-        </div>
-        """)
-
 
 st.markdown("---")
 st.markdown("Made by Myophily")
-
-
-# 하단 배너 광고
-st.html("""
-        <div class="ad-banner-bottom">
-            <ins class="kakao_ad_area" style="display:none;"
-            data-ad-unit = "DAN-YIhWnFVJhq24imgI"
-            data-ad-width = "320"   
-            data-ad-height = "100"></ins>
-            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-        </div>
-        """)
