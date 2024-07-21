@@ -49,7 +49,6 @@ st.html("""
     .ad-banner-top, .ad-banner-bottom {
         width: 100%;
         height: 50px;
-        background-color: #f0f0f0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -58,7 +57,6 @@ st.html("""
     .ad-banner-middle {
         width: 100%;
         height: 250px;
-        background-color: #f0f0f0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -149,6 +147,17 @@ with col5:
         2. (조리 단계)
         ...
         """
+
+        # 중간 배너 광고
+        st.html("""
+            <div class="ad-banner-middle">
+                <ins class="kakao_ad_area" style="display:none;"
+                data-ad-unit = "DAN-06p9ndXwToOadp2Y"
+                data-ad-width = "250"
+                data-ad-height = "250"></ins>
+                <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+            </div>
+            """)
 
         with st.spinner('레시피 생성 중...'):
             gemini_recipe = get_gemini_response(prompt)
