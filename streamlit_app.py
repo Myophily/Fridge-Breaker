@@ -64,25 +64,6 @@ st.html("""
         align-items: center;
         margin: 20px 0;
     }
-    @media (min-width: 800px) {
-        .ad-sidebar-left, .ad-sidebar-right {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 160px;
-            height: 600px;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .ad-sidebar-left {
-            left: 20px;
-        }
-        .ad-sidebar-right {
-            right: 20px;
-        }
-    }
     </style>
     """)
 
@@ -201,28 +182,6 @@ st.html("""
             data-ad-unit = "DAN-YIhWnFVJhq24imgI"
             data-ad-width = "320"   
             data-ad-height = "100"></ins>
-            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-        </div>
-        """)
-
-# PC용 측면 배너 (좌)
-st.html("""
-        <div class="ad-sidebar-left">
-            <ins class="kakao_ad_area" style="display:none;"
-            data-ad-unit = "DAN-DkJZFlikpq3bZH7J"
-            data-ad-width = "160"
-            data-ad-height = "600"></ins>
-            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-        </div>
-        """)
-
-# PC용 측면 배너 (우)
-st.html("""
-        <div class="ad-sidebar-right">
-            <ins class="kakao_ad_area" style="display:none;"
-            data-ad-unit = "DAN-zgGJrY08CWiRQd2C"
-            data-ad-width = "160"
-            data-ad-height = "600"></ins>
             <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
         </div>
         """)
