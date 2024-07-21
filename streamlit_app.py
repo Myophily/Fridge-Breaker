@@ -64,7 +64,7 @@ st.html("""
         align-items: center;
         margin: 20px 0;
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 800px) {
         .ad-sidebar-left, .ad-sidebar-right {
             position: fixed;
             top: 50%;
