@@ -39,15 +39,6 @@ def process_uploaded_images(uploaded_files, prompt):
         return ""
 
 
-# 상단 배너 광고
-st.markdown("""
-    <ins class="kakao_ad_area" style="display:none;"
-    data-ad-unit = "DAN-frWlbe0fkSdWeNHP"
-    data-ad-width = "320"
-    data-ad-height = "50"></ins>
-    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    """, unsafe_allow_html=True)
-
 # Streamlit 앱의 UI 구성
 st.title('Fridge Breaker (냉장고 털어먹기)')
 
@@ -128,65 +119,5 @@ with col5:
 with col6:
     st.markdown('Powered By GEMINI')
 
-# 중간 배너 광고
-st.markdown("""
-    <ins class="kakao_ad_area" style="display:none;"
-    data-ad-unit = "DAN-El8N7ApHiussJXqR"
-    data-ad-width = "250"
-    data-ad-height = "250"></ins>
-    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    """, unsafe_allow_html=True)
-
 st.markdown("---")
 st.markdown("Made by Myophily")
-
-# 하단 배너 광고
-st.markdown("""
-    <ins class="kakao_ad_area" style="display:none;"
-    data-ad-unit = "DAN-X5QpGPG2Xqn7u8NO"
-    data-ad-width = "320"
-    data-ad-height = "100"></ins>
-    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    """, unsafe_allow_html=True)
-
-# PC용 측면 배너 (좌)
-st.markdown("""
-    <style>
-    @media (min-width: 1200px) {
-        .sidebar-left {
-            position: fixed;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    }
-    </style>
-    <div class="sidebar-left">
-        <ins class="kakao_ad_area" style="display:none;"
-        data-ad-unit = "DAN-lxRqIeQRs8DawKcQ"
-        data-ad-width = "160"
-        data-ad-height = "600"></ins>
-        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    </div>
-    """, unsafe_allow_html=True)
-
-# PC용 측면 배너 (우)
-st.markdown("""
-    <style>
-    @media (min-width: 1200px) {
-        .sidebar-right {
-            position: fixed;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    }
-    </style>
-    <div class="sidebar-right">
-        <ins class="kakao_ad_area" style="display:none;"
-        data-ad-unit = "DAN-2qnG3am7KKrqbA7S"
-        data-ad-width = "160"
-        data-ad-height = "600"></ins>
-        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    </div>
-    """, unsafe_allow_html=True)
