@@ -1,6 +1,5 @@
 import streamlit as st
 import google.generativeai as genai
-import streamlit.components.v1 as components
 
 # API 키 설정
 gemini_api_key = st.secrets["GEMINI_API_KEY"]
@@ -36,20 +35,6 @@ def process_uploaded_images(uploaded_files, prompt):
         st.error(f"An error occurred while processing the images: {str(e)}")
         return ""
     
-
-components.html(
-    """
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNDLCSB29K"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-DNDLCSB29K');
-    </script>
-    """,
-    height=0,
-)
 
 # Streamlit 앱의 UI 구성
 st.title('Fridge Breaker (냉장고 털어먹기)')
