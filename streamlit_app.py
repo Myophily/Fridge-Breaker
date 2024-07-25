@@ -38,6 +38,12 @@ def process_uploaded_images(uploaded_files, prompt):
         st.error(f"An error occurred while processing the images: {str(e)}")
         return ""
 
+# Streamlit 앱 전체 설정
+st.set_page_config(
+    page_title="Fridge Breaker",
+    page_icon="https://www.iconfinder.com/icons/7989421/refigerator_cold_equipment_fridge_kitchen_icon",
+)
+
 
 # Streamlit 앱의 UI 구성
 st.title('Fridge Breaker (냉장고 털어먹기)')
