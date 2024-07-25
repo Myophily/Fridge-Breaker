@@ -10,5 +10,5 @@
 2. Run the app
 
    ```
-   $ streamlit run fridge_breaker.py
+   $ streamlit run streamlit_app.py
    ```
