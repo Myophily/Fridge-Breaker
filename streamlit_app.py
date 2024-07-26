@@ -41,7 +41,6 @@ def process_uploaded_images(uploaded_files, prompt):
 # Streamlit 앱 전체 설정
 st.set_page_config(
     page_title="Fridge Breaker",
-    page_icon="https://www.iconfinder.com/icons/7989421/refigerator_cold_equipment_fridge_kitchen_icon",
 )
 
 
