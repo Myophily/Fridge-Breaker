@@ -11,7 +11,7 @@ class GeminiClient:
         """Initialize Gemini client with API key"""
         self.api_key = api_key
         genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel('gemini-1.5-flash')
+        self.model = genai.GenerativeModel('gemini-2.0-flash-lite')
 
     def generate_response(self, prompt: str, images: list = None) -> str:
         """

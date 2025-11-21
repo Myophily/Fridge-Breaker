@@ -11,7 +11,7 @@ A Streamlit web application that helps you discover recipes based on ingredients
   - Cuisine type (Korean, Chinese, Western, Japanese, etc.)
   - Diet goals (Weight loss, Bulking, or No preference)
   - Health-conscious option
-- **AI-Powered Recommendations**: Powered by Google Gemini 1.5 Flash for intelligent recipe suggestions
+- **AI-Powered Recommendations**: Powered by Google Gemini 2.0 Flash-Lite for intelligent recipe suggestions
 
 ## Prerequisites
 
