@@ -2,6 +2,10 @@
 
 A Streamlit web application that helps you discover recipes based on ingredients available in your fridge using Google's Gemini AI.
 
+## Live Demo
+
+Try the app here: [https://fridge-breaker.streamlit.app](https://fridge-breaker.streamlit.app)
+
 ## Features
 
 - **Ingredient Input**: Enter ingredients via text or upload images
