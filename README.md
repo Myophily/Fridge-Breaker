@@ -81,4 +81,4 @@ This project includes a devcontainer configuration for easy development in VS Co
 
 ---
 
-Made by Myophily, Assisted by Konan LLM 41B & GPT-3.5,2024
+Made by Myophily, Assisted by Konan LLM 41B & GPT-3.5, 2024
