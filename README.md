@@ -25,12 +25,14 @@ Try the app here: [https://fridge-breaker.streamlit.app](https://fridge-breaker.
 ## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone <repository-url>
    cd Fridge-Breaker
    ```
 
 2. Install dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -44,6 +46,7 @@ Try the app here: [https://fridge-breaker.streamlit.app](https://fridge-breaker.
 ## Usage
 
 Run the application:
+
 ```bash
 streamlit run streamlit_app.py
 ```
@@ -79,3 +82,4 @@ This project includes a devcontainer configuration for easy development in VS Co
 ---
 
 Made by Myophily, 2024
+Assisted by Konan LLM 41B & GPT-3.5
