@@ -27,7 +27,7 @@ Try the app here: [https://fridge-breaker.streamlit.app](https://fridge-breaker.
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Myophily/Fridge-Breaker.git
    cd Fridge-Breaker
    ```
 
